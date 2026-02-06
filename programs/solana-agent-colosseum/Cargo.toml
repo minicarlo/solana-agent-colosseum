@@ -1,0 +1,22 @@
+[package]
+name = "solana-agent-colosseum"
+version = "0.1.0"
+description = "AI-Powered Solana Agent - Intelligent DeFi automation"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "solana_agent_colosseum"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+pyth-solana-receiver-sdk = "0.8.0"
+switchboard-v2 = "0.4.0"
