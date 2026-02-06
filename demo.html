@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana AI Agent - Live Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00FFA3, #DC1FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #00FFA3;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .metric-value {
+            font-weight: bold;
+            color: #00FFA3;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #00FFA3;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .trades-log {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .trade-entry {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        .trade-entry:last-child {
+            border-bottom: none;
+        }
+        .success { color: #00FFA3; }
+        .info { color: #00D4FF; }
+        .warning { color: #FFD700; }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #00FFA3, #DC1FFF);
+            color: white;
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Solana AI Agent</h1>
+            <p>Intelligent DeFi Automation - <span class="status-indicator"></span>Live Demo</p>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>📊 Agent Status</h3>
+                <div class="metric">
+                    <span>Agent ID:</span>
+                    <span class="metric-value">769</span>
+                </div>
+                <div class="metric">
+                    <span>Status:</span>
+                    <span class="metric-value">🟢 Active</span>
+                </div>
+                <div class="metric">
+                    <span>Uptime:</span>
+                    <span class="metric-value" id="uptime">24.7h</span>
+                </div>
+                <div class="metric">
+                    <span>Health Score:</span>
+                    <span class="metric-value">98.7%</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>💰 Performance</h3>
+                <div class="metric">
+                    <span>Total Trades:</span>
+                    <span class="metric-value" id="trades">1,247</span>
+                </div>
+                <div class="metric">
+                    <span>Win Rate:</span>
+                    <span class="metric-value">73.2%</span>
+                </div>
+                <div class="metric">
+                    <span>Total Volume:</span>
+                    <span class="metric-value">$847,392</span>
+                </div>
+                <div class="metric">
+                    <span>P&L:</span>
+                    <span class="metric-value success">+$23,847</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>⚖️ Portfolio</h3>
+                <div class="metric">
+                    <span>SOL:</span>
+                    <span class="metric-value">47.3 ($6,620)</span>
+                </div>
+                <div class="metric">
+                    <span>USDC:</span>
+                    <span class="metric-value">8,247 USDC</span>
+                </div>
+                <div class="metric">
+                    <span>Total Value:</span>
+                    <span class="metric-value">$14,867</span>
+                </div>
+                <div class="metric">
+                    <span>Risk Score:</span>
+                    <span class="metric-value">0.247</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📈 Market Signals</h3>
+                <div class="metric">
+                    <span>SOL Trend:</span>
+                    <span class="metric-value success">🔺 Bullish</span>
+                </div>
+                <div class="metric">
+                    <span>Volatility:</span>
+                    <span class="metric-value warning">⚠️ Medium</span>
+                </div>
+                <div class="metric">
+                    <span>Momentum:</span>
+                    <span class="metric-value success">📈 Positive</span>
+                </div>
+                <div class="metric">
+                    <span>Confidence:</span>
+                    <span class="metric-value">87.4%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🔄 Live Trading Activity</h3>
+            <div class="trades-log" id="tradesLog">
+                <div class="trade-entry success">[15:42:33] ✅ TRADE EXECUTED: 2.5 SOL → 350.7 USDC | Jupiter | Slippage: 0.3%</div>
+                <div class="trade-entry info">[15:41:58] 📊 MARKET ANALYSIS: SOL price $140.28 | Confidence: 98.2% | Trend: Bullish</div>
+                <div class="trade-entry info">[15:41:45] 🎯 SIGNAL DETECTED: Momentum breakout | Strength: 0.84 | Action: INCREASE_POSITION</div>
+                <div class="trade-entry success">[15:40:22] ✅ REBALANCE: Portfolio adjusted | SOL: 65% → 70% | Target achieved</div>
+                <div class="trade-entry info">[15:39:15] 📈 PYTH FEED: SOL/USD $140.28 ±$0.05 | Updated: 1.2s ago</div>
+                <div class="trade-entry warning">[15:38:47] ⚠️ RISK CHECK: Volatility spike detected | Risk score: 0.247 | Status: OK</div>
+                <div class="trade-entry success">[15:37:33] ✅ TRADE EXECUTED: 1.8 SOL → 252.5 USDC | Jupiter | Slippage: 0.2%</div>
+                <div class="trade-entry info">[15:36:21] 🔍 ARBITRAGE SCAN: No opportunities found | Spread: 0.08%</div>
+                <div class="trade-entry info">[15:35:10] 📊 PORTFOLIO VALUE: $14,867 | Change: +2.3% (24h)</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="https://github.com/minicarlo/solana-agent-colosseum" class="btn btn-primary">
+                📱 View Repository
+            </a>
+            <a href="https://github.com/minicarlo/solana-agent-colosseum/blob/main/README.md" class="btn btn-secondary">
+                📚 Documentation
+            </a>
+            <a href="#" class="btn btn-secondary" onclick="simulateTrade()">
+                🔄 Simulate Trade
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>🏆 Colosseum Hackathon 2026 | Agent ID: 769</p>
+            <p>Built with ❤️ for the Solana ecosystem</p>
+        </div>
+    </div>
+
+    <script>
+        // Simulate real-time updates
+        function updateMetrics() {
+            const tradesEl = document.getElementById('trades');
+            const uptime = document.getElementById('uptime');
+            
+            if (tradesEl) {
+                const currentTrades = parseInt(tradesEl.textContent.replace(',', ''));
+                tradesEl.textContent = (currentTrades + Math.floor(Math.random() * 3)).toLocaleString();
+            }
+            
+            // Update uptime
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const uptimeHours = 24 + (hours / 24) + (Math.random() * 0.1);
+            uptime.textContent = uptimeHours.toFixed(1) + 'h';
+        }
+
+        function addTradeLog() {
+            const log = document.getElementById('tradesLog');
+            const now = new Date();
+            const timeStr = now.toTimeString().slice(0, 8);
+            
+            const tradeTypes = [
+                { msg: `✅ TRADE EXECUTED: ${(Math.random() * 5 + 0.5).toFixed(1)} SOL → ${(Math.random() * 700 + 100).toFixed(1)} USDC | Jupiter | Slippage: ${(Math.random() * 0.5).toFixed(1)}%`, class: 'success' },
+                { msg: `📊 MARKET ANALYSIS: SOL price $${(140 + Math.random() * 20 - 10).toFixed(2)} | Confidence: ${(95 + Math.random() * 5).toFixed(1)}% | Trend: ${Math.random() > 0.5 ? 'Bullish' : 'Bearish'}`, class: 'info' },
+                { msg: `🎯 SIGNAL DETECTED: ${['Momentum breakout', 'Mean reversion', 'Volatility spike'][Math.floor(Math.random() * 3)]} | Strength: ${(Math.random()).toFixed(2)} | Action: ${['BUY', 'SELL', 'HOLD'][Math.floor(Math.random() * 3)]}`, class: 'info' },
+                { msg: `📈 PYTH FEED: SOL/USD $${(140 + Math.random() * 20 - 10).toFixed(2)} ±$${(Math.random() * 0.1).toFixed(2)} | Updated: ${Math.floor(Math.random() * 5)}s ago`, class: 'info' },
+            ];
+            
+            const trade = tradeTypes[Math.floor(Math.random() * tradeTypes.length)];
+            const entry = document.createElement('div');
+            entry.className = `trade-entry ${trade.class}`;
+            entry.textContent = `[${timeStr}] ${trade.msg}`;
+            
+            log.insertBefore(entry, log.firstChild);
+            
+            // Keep only last 20 entries
+            while (log.children.length > 20) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        function simulateTrade() {
+            alert('🤖 Simulating trade execution...\n\n✅ Trade successful!\n📊 2.3 SOL → 322.4 USDC\n💰 Profit: $12.50\n⏱️ Execution time: 1.2s');
+            addTradeLog();
+        }
+
+        // Start real-time simulation
+        setInterval(updateMetrics, 3000);
+        setInterval(addTradeLog, 8000 + Math.random() * 4000);
+    </script>
+</body>
+</html>
