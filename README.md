@@ -1,6 +1,6 @@
-# Solana Agent - Colosseum Hackathon Landing Page
+# Zephyr - Colosseum Hackathon Landing Page
 
-Professional landing page for the Solana Agent Colosseum hackathon submission.
+Professional landing page for the Zephyr Colosseum hackathon submission.
 
 ## Features
 
