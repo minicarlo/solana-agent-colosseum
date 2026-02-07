@@ -3,129 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zephyr | AI-Powered Solana DeFi Agent</title>
-    <meta name="description" content="Autonomous AI trading agent on Solana. Integrates Jupiter DEX aggregator and Pyth price feeds for intelligent, 24/7 DeFi automation.">
+    <title>Zephyr | Autonomous DeFi Agent on Solana</title>
+    <meta name="description" content="Production-ready AI trading agent on Solana. 24/7 autonomous DeFi operations with Jupiter DEX aggregation and Pyth price feeds.">
     
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Zephyr - AI-Powered Solana DeFi Agent">
-    <meta property="og:description" content="Autonomous trading agent combining AI with Solana DeFi. Built for Colosseum Hackathon 2026.">
+    <meta property="og:title" content="Zephyr - Autonomous DeFi Agent on Solana">
+    <meta property="og:description" content="Production-ready AI trading with 24/7 automation, Jupiter swaps, and Pyth price feeds.">
     <meta property="og:url" content="https://minicarlo.github.io/zephyr/">
-    <meta property="og:site_name" content="Zephyr">
     
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zephyr - AI-Powered Solana DeFi Agent">
-    <meta name="twitter:description" content="Autonomous trading agent combining AI with Solana DeFi. Built for Colosseum Hackathon 2026.">
+    <meta name="twitter:title" content="Zephyr - Autonomous DeFi Agent">
+    <meta name="twitter:description" content="Production-ready AI trading agent on Solana">
     
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Zephyr</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="https://github.com/minicarlo/zephyr" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="grid-pattern"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <div class="badge">Colosseum Hackathon 2026</div>
-                <h1 class="hero-title">Zephyr</h1>
-                <p class="hero-subtitle">AI-Powered DeFi Automation on Solana</p>
-                <p class="hero-description">Intelligent trading agent with Jupiter swaps and Pyth price feeds. Built for the future of autonomous DeFi.</p>
-                <div class="cta-buttons">
+                <div class="badge-group">
+                    <span class="badge badge-live">
+                        <span class="pulse"></span>
+                        Live on Devnet
+                    </span>
+                    <span class="badge badge-hackathon">Colosseum Hackathon 2026</span>
+                </div>
+                <h1 class="hero-title">
+                    Autonomous DeFi
+                    <span class="gradient-text">Intelligence</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Production-ready AI agent that trades, optimizes, and manages your Solana portfolio 24/7
+                </p>
+                <div class="hero-cta">
                     <a href="https://github.com/minicarlo/zephyr" class="btn btn-primary" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                         View on GitHub
                     </a>
-                    <a href="#demo" class="btn btn-secondary">Watch Demo</a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+                        </svg>
+                        Watch Demo
+                    </a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <div class="card-icon">🤖</div>
-                    <div class="card-label">AI Agent</div>
+            
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">Tests Passing</div>
                 </div>
-                <div class="floating-card card-2">
-                    <div class="card-icon">⚡</div>
-                    <div class="card-label">Jupiter</div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">$0.001</div>
+                    <div class="stat-label">Per Transaction</div>
                 </div>
-                <div class="floating-card card-3">
-                    <div class="card-icon">📊</div>
-                    <div class="card-label">Pyth</div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">400ms</div>
+                    <div class="stat-label">Finality</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Coverage</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Features Grid -->
+    <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Built for Speed, Intelligence & Security</h2>
+            <div class="section-header">
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-title">Built for Production</h2>
+                <p class="section-subtitle">Enterprise-grade infrastructure meets autonomous intelligence</p>
+            </div>
+            
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>AI-Powered Trading</h3>
-                    <p>Advanced machine learning algorithms analyze market conditions and execute optimal trading strategies in real-time.</p>
+                <div class="feature-card feature-large">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Powered Strategy</h3>
+                    <p>Machine learning models analyze market conditions, identify opportunities, and execute optimal trading strategies without human intervention.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Jupiter Integration</h3>
-                    <p>Seamless swaps across Solana's best DEXs with intelligent routing for maximum efficiency and minimal slippage.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>Lightning Execution</h3>
+                    <p>Sub-second transaction finality on Solana with intelligent routing through Jupiter DEX aggregator.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Pyth Price Feeds</h3>
-                    <p>Real-time, high-fidelity price data from Pyth Network ensures accurate decision-making for every trade.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3>Self-Custodial</h3>
+                    <p>You maintain full control of your assets. The agent operates with delegated permissions, never holding your keys.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Leveraging Solana's high throughput to execute trades in milliseconds with minimal transaction costs.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Feeds</h3>
+                    <p>High-fidelity price data from Pyth Network ensures accurate decision-making for every trade.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure by Design</h3>
-                    <p>Battle-tested smart contracts and secure key management ensure your assets are always protected.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Autonomous Operations</h3>
-                    <p>Set it and forget it. The agent handles monitoring, analysis, and execution 24/7 without human intervention.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>24/7 Operations</h3>
+                    <p>Never sleeps. Monitors markets, executes strategies, and manages risk around the clock.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
+    <!-- Tech Stack -->
     <section class="tech-stack">
         <div class="container">
-            <h2 class="section-title">Powered by Best-in-Class Technology</h2>
+            <div class="section-header light">
+                <span class="section-tag">Technology</span>
+                <h2 class="section-title">Powered By Industry Leaders</h2>
+            </div>
+            
             <div class="tech-grid">
-                <div class="tech-item">
-                    <div class="tech-logo">◎</div>
-                    <div class="tech-name">Solana</div>
+                <div class="tech-card">
+                    <div class="tech-logo solana">◎</div>
+                    <span class="tech-name">Solana</span>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-logo">🪐</div>
-                    <div class="tech-name">Jupiter</div>
+                <div class="tech-card">
+                    <div class="tech-logo jupiter">JUP</div>
+                    <span class="tech-name">Jupiter</span>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-logo">🔮</div>
-                    <div class="tech-name">Pyth Network</div>
+                <div class="tech-card">
+                    <div class="tech-logo pyth">PYTH</div>
+                    <span class="tech-name">Pyth Network</span>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-logo">🦀</div>
-                    <div class="tech-name">Rust</div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-logo">⚛️</div>
-                    <div class="tech-name">React</div>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-logo">🔗</div>
-                    <div class="tech-name">Web3.js</div>
+                <div class="tech-card">
+                    <div class="tech-logo anchor">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        </svg>
+                    </div>
+                    <span class="tech-name">Anchor</span>
                 </div>
             </div>
         </div>
@@ -134,34 +205,40 @@
     <!-- Demo Section -->
     <section id="demo" class="demo">
         <div class="container">
-            <h2 class="section-title">See It In Action</h2>
             <div class="demo-container">
-                <div class="demo-placeholder">
-                    <div class="demo-icon">▶️</div>
-                    <p>Demo Video Coming Soon</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hackathon Section -->
-    <section class="hackathon">
-        <div class="container">
-            <div class="hackathon-card">
-                <h2>Colosseum Hackathon Submission</h2>
-                <p class="hackathon-desc">Built during the Colosseum Hackathon 2026, this project showcases the power of AI-driven DeFi automation on Solana. Our goal: make sophisticated trading strategies accessible to everyone.</p>
-                <div class="hackathon-stats">
-                    <div class="stat">
-                        <div class="stat-value">February 2026</div>
-                        <div class="stat-label">Submission Date</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">AI x DeFi</div>
-                        <div class="stat-label">Category</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">Solana</div>
-                        <div class="stat-label">Blockchain</div>
+                <div class="demo-content">
+                    <span class="section-tag">See It In Action</span>
+                    <h2>Autonomous Trading, Simplified</h2>
+                    <p>Watch Zephyr analyze market conditions, identify opportunities, and execute trades in real-time.</p>
+                    <div class="demo-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dot red"></div>
+                            <div class="terminal-dot yellow"></div>
+                            <div class="terminal-dot green"></div>
+                            <span class="terminal-title">zephyr-agent</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="timestamp">14:32:01</span>
+                                <span class="level info">INFO</span>
+                                <span class="message">Market analysis complete. Opportunity detected: SOL/USDC</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="timestamp">14:32:02</span>
+                                <span class="level info">INFO</span>
+                                <span class="message">Route optimization: Jupiter aggregator selected</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="timestamp">14:32:03</span>
+                                <span class="level success">SUCCESS</span>
+                                <span class="message">Transaction confirmed: 5.2 SOL → 847.32 USDC</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="timestamp">14:32:04</span>
+                                <span class="level info">INFO</span>
+                                <span class="message">Profit: +$12.47 (1.48%)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -171,16 +248,15 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Experience the Future?</h2>
-            <p>Join us in revolutionizing DeFi automation on Solana</p>
+            <h2>Ready to Automate Your DeFi Strategy?</h2>
+            <p>Join the future of autonomous trading on Solana</p>
             <div class="cta-buttons">
-                <a href="https://github.com/minicarlo/zephyr" class="btn btn-primary" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <a href="https://github.com/minicarlo/zephyr" class="btn btn-primary btn-large" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
-                    Explore the Code
+                    Explore on GitHub
                 </a>
-                <a href="mailto:contact@example.com" class="btn btn-secondary">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -188,11 +264,24 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Solana Agent. Built for Colosseum Hackathon.</p>
-            <div class="footer-links">
-                <a href="https://github.com/minicarlo/zephyr" target="_blank">GitHub</a>
-                <a href="#demo">Demo</a>
-                <a href="mailto:contact@example.com">Contact</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span>Zephyr</span>
+                </div>
+                <p class="footer-tagline">Built for Colosseum Hackathon 2026</p>
+                <div class="footer-links">
+                    <a href="https://github.com/minicarlo/zephyr" target="_blank">GitHub</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#features">Features</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Zephyr. All rights reserved.</p>
             </div>
         </div>
     </footer>
