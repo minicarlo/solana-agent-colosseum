@@ -9,11 +9,11 @@
 
 Built for Colosseum Hackathon 2026 🏆
 
-## 🌐 Try It Live
+## 🌐 Check Out The Landing Page
 
 **👉 https://minicarlo.github.io/zephyr/**
 
-Experience the interactive terminal demo, real-time price feeds, and professional landing page.
+View the professional landing page with interactive terminal demo. **Note:** The live API features (real Pyth prices, Jupiter quotes) require running the backend locally (see Installation below).
 
 ---
 
@@ -100,25 +100,24 @@ Server runs on `http://localhost:3000`
 
 ---
 
-## 🌐 Live Website
+## 🌐 Landing Page
 
-**Production deployment:** https://minicarlo.github.io/zephyr/
+**Static site:** https://minicarlo.github.io/zephyr/
 
-### Features:
-- 🎨 **Professional Landing Page** - Dark theme with Solana-inspired gradients
-- ⚡ **Interactive Terminal Demo** - Live trading simulation with real-time output
+### What's On The Website:
+- 🎨 **Professional Design** - Dark theme with Solana-inspired gradients
+- ⚡ **Interactive Terminal Demo** - Simulated trading (JavaScript-based, no backend needed)
 - 📊 **Protocol Logos** - Authentic Solana, Jupiter, Pyth, and Anchor branding
-- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
-- 🔗 **GitHub Integration** - Direct links to source code and documentation
+- 📱 **Responsive Layout** - Works on desktop, tablet, and mobile
+- 🔗 **Links** - Direct access to GitHub repo and documentation
 
-### What You'll See:
-1. **Hero Section** - Animated introduction with key stats
-2. **Features Grid** - 6 core capabilities with icons
-3. **Tech Stack** - Partner logos with hover effects
-4. **Live Terminal** - Scroll to activate the demo (shows simulated trading)
-5. **Call-to-Action** - GitHub and demo links
+### What's NOT On The Website (Requires Backend):
+- ❌ Real-time Pyth price feeds
+- ❌ Live Jupiter swap quotes  
+- ❌ Agent management API
+- ❌ On-chain program interaction
 
-**No installation required** — visit the URL and the demo works immediately!
+**To use the full app** with real data, see [Installation](#installation) below to run the backend locally.
 
 ---
 
@@ -151,16 +150,18 @@ POST /agent/:agentId/trade     # Execute trade
 
 ---
 
-## 🎮 Live Demo
+## 🎮 Landing Page Demo
 
-The interactive demo includes:
+The website includes:
 
-- **Live Terminal** - Real-time agent activity simulation
-- **Price Ticker** - Live Pyth price updates
-- **Trade Visualization** - See routes, execution, and P&L
+- **Simulated Terminal** - JavaScript-based trading simulation (works without backend)
+- **Static Price Display** - Mock data for visual demonstration
+- **Trade Visualization** - Animated terminal showing mock execution
 - **Tech Stack** - Actual logos of integrated protocols
 
-👉 **Try it:** https://minicarlo.github.io/zephyr/
+👉 **View it:** https://minicarlo.github.io/zephyr/
+
+**For real data:** Run `npm start` to launch the backend with live Pyth feeds and Jupiter quotes.
 
 ---
 
