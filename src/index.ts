@@ -2,12 +2,17 @@ import { Connection, Keypair, PublicKey } from '@solana/web3.js';
 import { AnchorProvider, Program, setProvider, Wallet } from '@project-serum/anchor';
 import express from 'express';
 import cors from 'cors';
+import { PythPriceFeed } from './pyth.js';
 
 async function main() {
     console.log('🚀 Initializing Zephyr...');
     
     // Initialize Solana connection
     const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
+    
+    // Initialize Pyth price feed
+    const pythFeed = new PythPriceFeed(connection);
+    console.log('📡 Pyth price feed initialized');
     
     // Load keypair (in production, this would be more secure)
     const keypair = Keypair.generate(); // For demo purposes
@@ -41,6 +46,37 @@ async function main() {
                 profitLoss: '+$23,847'
             };
             res.json(status);
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    });
+    
+    // Get Pyth price feeds
+    app.get('/prices', async (req, res) => {
+        try {
+            const prices = await pythFeed.getAllPrices();
+            res.json({
+                timestamp: new Date().toISOString(),
+                source: 'Pyth Network',
+                prices
+            });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    });
+    
+    // Get specific pair price
+    app.get('/prices/:pair', async (req, res) => {
+        try {
+            const pair = req.params.pair.toUpperCase();
+            const price = await pythFeed.getPriceForPair(pair);
+            if (!price) {
+                return res.status(404).json({ error: `Price not available for ${pair}` });
+            }
+            res.json({
+                pair,
+                ...price
+            });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
